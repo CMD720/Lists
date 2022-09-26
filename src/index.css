@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('./icons/style.css');
+
+:root {
+    --Dark_Shade_100: #1F2041;
+    --Dark_Shade_75: rgba(31, 32, 65, 0.75);
+    --Dark_Shade_50: rgba(31, 32, 65, 0.5);
+    --Dark_Shade_25: rgba(31, 32, 65, 0.25);
+    --Dark_Shade_5: rgba(31, 32, 65, 0.05);
+    --Purple: #BC9CFF;
+    --Blue: #8BA4F9;
+    --Green: #6FCF97;
+    --font_Montserrat: 'Montserrat', sans-serif;
+    --H1_size: 24px;
+    --Primary_Gradient : linear-gradient(180deg, var(--Purple) 0%, var(--Blue) 100%);
+    --Secondary_Gradient : linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    --Border_Gradient : linear-gradient(#fff, #fff) padding-box ,linear-gradient(180deg, var(--Purple) 0%, var(--Blue) 100%) border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font_Montserrat);
+    outline: 0;
+    outline-offset: 0;
 }

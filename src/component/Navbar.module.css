@@ -1,0 +1,40 @@
+.navbar_wrapper {
+
+}
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    background-color: #1976d2;
+    color: white;
+    display: flex;
+    justify-content: end;
+    /*flex-direction: column;*/
+    align-items: center;
+}
+
+.user_auth {
+    margin: 10px;
+    display: flex;
+    justify-self: end;
+    align-items: center;
+}
+.ava{
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.tools{
+    justify-self: start;
+}
+.auth_wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /*align-items: center;*/
+}
+a{
+    text-decoration: none;
+}
