@@ -9,6 +9,7 @@ interface InputProps {
     type?: string;
     placeholder?: string;
     action?: boolean;
+
 }
 
 const Input: FC<InputProps> =

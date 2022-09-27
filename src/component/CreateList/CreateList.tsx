@@ -8,37 +8,44 @@ const CreateList = () => {
     const [form , setForm] = useState({
         title: "",
         description: "",
-        items:[""],
+        // items:[""],
+        items:[{
+            id: Date.now(),
+            value:"",
+        }],
     })
 
 
     const handleItemCount = () =>{
+        const item = {
+            id: Date.now(),
+            value:"",
+        }
         setForm({
             ...form,
-            items:[...form.items,""]
+            items:[...form.items,item]
         })
     }
-    const removeItem = (item: any , i:any) =>{
-        console.log('event', i)
-        console.log('item', item)
+    const removeItem = (currentItem:any ) =>{
+        console.log('item', currentItem)
         // const removePost = (post) => {
         //     setPosts(posts.filter(p => p.id !== post.id))
         // }
-        const copyItems = form.items.splice(i,1)
-        // const copyItems = form.items.filter(ite => ite !== item )
-        // setForm({
-        //     ...form,
-        //     items: [...form.items.splice(i,1)]
-        // })
+        const copyItems = form.items.filter((item,j) => item.id !== currentItem.id)
+
         setForm({
             ...form,
-            items: [...form.items.filter((ite,j) => ite !== i)]
+            // items: [...form.items.filter(item => item.id !== currentItem.id)]
+            items: [...form.items = copyItems]
         })
         console.log('form.items',form.items)
-        console.log('copyItems',copyItems)
     }
-    const handleItem = (e:any) =>{
+
+    const handleItem = (selectItem:any , e:any) =>{
+        // e.preventDefault()
         console.log('item target value', e.target.value)
+        console.log('item target ', e)
+        selectItem.value = e.target.value
     }
 
     return (
@@ -57,9 +64,9 @@ const CreateList = () => {
             </div>
             <div>{
                 form.items.map((item, i) => (
-                <Input key={i} placeholder={"enter Action"} action={true}
-                       onClick={e => removeItem(item,i)}
-                       onChange={e => handleItem(e)}
+                <Input key={i}  placeholder={"enter Action"} action={true}
+                       onClick={e => removeItem(item)}
+                       onChange={e => handleItem(item,e)}
                 />
                 ))
             }
