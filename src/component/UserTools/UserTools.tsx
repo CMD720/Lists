@@ -1,12 +1,12 @@
 import React from 'react';
-import NewList from "../UI/newList/NewList";
-import AddItem from "../UI/addItem/AddItem";
-import {modalOnOffAuto} from "../store/reducers/ModalSlice";
-import MyModal from "../UI/Modal/MyModal";
 import {useDispatch} from "react-redux";
-import {useAppSelector} from "../ShopListItemHooks/redux";
 import style from './UserTools.module.css'
-import CreateList from "./CreateList/CreateList";
+import {useAppSelector} from "../../ShopListItemHooks/redux";
+import NewList from "../../UI/newList/NewList";
+import AddItem from "../../UI/addItem/AddItem";
+import CreateList from "../CreateList/CreateList";
+import {modalOnOffAuto} from "../../store/reducers/ModalSlice";
+import MyModal from "../../UI/Modal/MyModal";
 
 const UserTools = () => {
     const dispatch = useDispatch()
@@ -16,7 +16,6 @@ const UserTools = () => {
             <NewList/>
             <AddItem onClick={() => dispatch(modalOnOffAuto())} size={'medium'}/>
             <MyModal visible={modal}>
-                Hi am here
                 <CreateList/>
             </MyModal>
         </div>

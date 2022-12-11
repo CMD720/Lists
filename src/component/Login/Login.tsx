@@ -1,5 +1,4 @@
 // import React, {useContext} from 'react';
-
 // import {Context} from "../context/Context";
 // import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 //
@@ -37,7 +36,7 @@
 
 import React from 'react';
 import style from './Login.module.css'
-import RectangleButton from "../UI/rectangleButton/rectangleButton";
+import RectangleButton from "../../UI/rectangleButton/rectangleButton";
 
 const Login = () => {
     return (

@@ -3,7 +3,8 @@ import {useDispatch} from "react-redux";
 import {useAppSelector} from "./ShopListItemHooks/redux";
 import {BrowserRouter} from "react-router-dom";
 import AppRouter from "./component/AppRouter";
-import Navbar from "./component/Navbar";
+import Navbar from "./component/NavBar/Navbar";
+// import Navbar from "./component/Navbar";
 
 
 interface AppProps {

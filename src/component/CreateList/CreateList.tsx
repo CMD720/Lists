@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import style from "./CreateList.module.css"
 import Input from "../../UI/input/input";
 import RectangleButton from "../../UI/rectangleButton/rectangleButton";
+import ListItems from "../ListItems/ListItems";
 
 
 const CreateList = () => {
     const [form , setForm] = useState({
         title: "",
         description: "",
-        // items:[""],
         items:[{
             id: Date.now(),
             value:"",
@@ -28,9 +28,6 @@ const CreateList = () => {
     }
     const removeItem = (currentItem:any ) =>{
         console.log('item', currentItem)
-        // const removePost = (post) => {
-        //     setPosts(posts.filter(p => p.id !== post.id))
-        // }
         const copyItems = form.items.filter((item,j) => item.id !== currentItem.id)
 
         setForm({
@@ -41,15 +38,32 @@ const CreateList = () => {
         console.log('form.items',form.items)
     }
 
-    const handleItem = (selectItem:any , e:any) =>{
+    const handleItem = (selectItem:any , e:any , i:number) =>{
         // e.preventDefault()
         console.log('item target value', e.target.value)
-        console.log('item target ', e)
-        selectItem.value = e.target.value
+        const itemsClone = [...form.items]
+        itemsClone[i].value = e.target.value
+
+        setForm({
+            ...form,
+            items: itemsClone
+        })
+        console.log('form.items',form.items)
+
+    }
+    const keyPress = (e:KeyboardEvent) => {
+        console.log('KEY LOG', e)
+        if(e.key === 'Enter'){
+            handleItemCount();
+        }
     }
 
     return (
         <div>
+            {/*<h2 className={style.label}>Add new list</h2>*/}
+            <div className={style.label}>
+               <h2>Add new list</h2>
+            </div>
             <div>
                 <div className={style.label}>Title</div>
                 <Input
@@ -62,15 +76,28 @@ const CreateList = () => {
                     onChange={e => setForm({...form, description: e.target.value})}
                 />
             </div>
-            <div>{
+            <div>
+                {
                 form.items.map((item, i) => (
                 <Input key={i}  placeholder={"enter Action"} action={true}
+                       value={item.value}
                        onClick={e => removeItem(item)}
-                       onChange={e => handleItem(item,e)}
+                       onChange={e => handleItem(item,e,i)}
+                       onKeyPress={e => keyPress(e)}
                 />
                 ))
             }
             </div>
+
+            {/*<div>*/}
+            {/*    {form.items.length !==0*/}
+            {/*        ? form.items.map(item => (*/}
+            {/*            <div key={item.id} style={{color:'black'}}>{item.value}</div>*/}
+            {/*        ))*/}
+            {/*        : <div style={{color:'black'}}>EMPTY</div>*/}
+            {/*    }*/}
+            {/*</div>*/}
+
             <div>
                 <RectangleButton onClick={handleItemCount}>Add Item</RectangleButton>
             </div>

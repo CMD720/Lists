@@ -1,11 +1,9 @@
 import React, {useContext} from 'react';
 import {NavLink} from "react-router-dom";
-import {LOGIN_ROUTE} from "../utils/consts";
 import style from './Navbar.module.css'
-import RectangleButton from "../UI/rectangleButton/rectangleButton";
-import UserTools from "./UserTools";
-// import {Context} from "../context/Context";
-// import {useAuthState} from "react-firebase-hooks/auth";
+import RectangleButton from "../../UI/rectangleButton/rectangleButton";
+import {LOGIN_ROUTE} from "../../utils/consts";
+import UserTools from "../UserTools/UserTools";
 
 const Navbar = () => {
     // const {auth} = useContext(Context)
@@ -26,7 +24,6 @@ const Navbar = () => {
                   </div>
                 : <NavLink to={LOGIN_ROUTE}>
                     <div className={style.user_auth}>
-                    {/*<div className={style.ava}></div>*/}
                      <RectangleButton color={'white'}>LOGIN</RectangleButton>
                     </div>
                   </NavLink>

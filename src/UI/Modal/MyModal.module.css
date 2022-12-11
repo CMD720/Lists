@@ -14,8 +14,9 @@
     background: white;
     border-radius: 8px;
     min-width: 250px;
-    width: 400px;
-    height: 500px;
+    /*width: 400px;*/
+    width: 30%;
+    /*height: 500px;*/
 }
 
 .myModal.active {
@@ -25,6 +26,8 @@
 }
 .closeModal{
     position: relative;
-    left: 350px;
-    bottom: 10px;
+    display: flex;
+    justify-content: end;
+    /*left: 350px;*/
+    /*bottom: 10px;*/
 }

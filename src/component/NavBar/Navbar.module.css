@@ -16,8 +16,8 @@
 .user_auth {
     margin: 10px;
     display: flex;
-    justify-self: end;
-    align-items: center;
+    /*justify-self: end;*/
+    /*align-items: center;*/
 }
 .ava{
     margin: 5px;
@@ -27,13 +27,14 @@
     border: 1px solid white;
 }
 .tools{
-    justify-self: start;
+    /*justify-self: start;*/
+    /*justify-content: center;*/
 }
 .auth_wrapper{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /*align-items: center;*/
+    align-items: center;
 }
 a{
     text-decoration: none;
